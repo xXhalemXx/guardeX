@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>guardeX | Coming Soon</title>
+	<meta name="description" content="guardeX helps food companies improve quality systems and prepare for certification audits.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="assets/small_logo.png">
+</head>
+<body>
+	<div class="orb one" aria-hidden="true"></div>
+	<div class="orb two" aria-hidden="true"></div>
+
+	<main class="page">
+		<div class="top">
+			<a class="logo" href="#" aria-label="guardeX home">
+				<img src="assets\logo.png" alt="guardeX logo" class="brand-logo">
+			</a>
+			<span class="badge">Website launching soon</span>
+		</div>
+
+		<section class="hero">
+			<div class="main">
+				<span class="tag">Food Quality and Certification Advisory</span>
+				<h1>Certified confidence for food brands starts here.</h1>
+				<p class="lead">
+					guardeX supports food companies with quality systems, audit readiness, and practical guidance to achieve trusted food safety certifications.
+				</p>
+				<div class="highlights">
+					<span class="pill">Regulatory Affairs</span>
+					<span class="pill">NFSA Compliance</span>
+					<span class="pill">Food Services</span>
+					<span class="pill">Quality Systems Consulting</span>
+					<span class="pill">Export Operations</span>
+					<span class="pill">Food Systems Compliance</span>
+				</div>
+				<div class="direct-contacts">
+					<span>Email: <a href="mailto:official@guard-ex.org">official@guard-ex.org</a></span>
+					<span>Phone / WhatsApp: <a href="https://wa.me/201505836563" target="_blank" rel="noopener noreferrer">+201505836563</a></span>
+				</div>
+				<a class="contact" href="mailto:official@guard-ex.org">Contact Us Early</a>
+			</div>
+
+			<aside class="panel" aria-label="Launch information">
+				<div class="countdown" id="countdown">
+					<div class="time-box"><b id="days">00</b><span>Days</span></div>
+					<div class="time-box"><b id="hours">00</b><span>Hours</span></div>
+					<div class="time-box"><b id="minutes">00</b><span>Minutes</span></div>
+					<div class="time-box"><b id="seconds">00</b><span>Seconds</span></div>
+				</div>
+				<p class="status" id="statusText">
+					We are preparing our full service pages, case studies, and certification roadmaps.
+				</p>
+			</aside>
+		</section>
+
+		<footer>
+			<span id="year"></span>
+			<span>The Shield Behind Your Success.</span>
+		</footer>
+	</main>
+
+	<script>
+		const launchDate = new Date();
+		launchDate.setMonth(launchDate.getMonth() + 2);
+
+		const dayEl = document.getElementById("days");
+		const hourEl = document.getElementById("hours");
+		const minEl = document.getElementById("minutes");
+		const secEl = document.getElementById("seconds");
+		const statusEl = document.getElementById("statusText");
+		const yearEl = document.getElementById("year");
+
+		function pad(value) {
+			return String(value).padStart(2, "0");
+		}
+
+		function updateCountdown() {
+			const now = new Date();
+			const diff = launchDate - now;
+
+			if (diff <= 0) {
+				dayEl.textContent = "00";
+				hourEl.textContent = "00";
+				minEl.textContent = "00";
+				secEl.textContent = "00";
+				statusEl.textContent = "Our full website is now live. Thank you for waiting.";
+				return;
+			}
+
+			const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+			const minutes = Math.floor((diff / (1000 * 60)) % 60);
+			const seconds = Math.floor((diff / 1000) % 60);
+
+			dayEl.textContent = pad(days);
+			hourEl.textContent = pad(hours);
+			minEl.textContent = pad(minutes);
+			secEl.textContent = pad(seconds);
+		}
+
+		yearEl.textContent = new Date().getFullYear() + " guardeX";
+		updateCountdown();
+		setInterval(updateCountdown, 1000);
+	</script>
+</body>
+</html>
