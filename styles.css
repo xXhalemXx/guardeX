@@ -249,6 +249,66 @@ footer {
 	flex-wrap: wrap;
 }
 
+.legal {
+	max-width: 76ch;
+	line-height: 1.65;
+}
+
+.legal h1 {
+	max-width: none;
+	margin-bottom: 1.4rem;
+}
+
+.legal section {
+	padding: 1.1rem 0;
+	border-top: 1px solid var(--line);
+}
+
+.legal h2 {
+	font-size: 1.15rem;
+	color: var(--primary);
+	margin-bottom: 0.6rem;
+}
+
+.legal p,
+.legal li {
+	color: var(--muted);
+	font-size: 0.97rem;
+}
+
+.legal p + p,
+.legal p + ul,
+.legal ul + p {
+	margin-top: 0.6rem;
+}
+
+.legal ul {
+	padding-left: 1.25rem;
+	display: grid;
+	gap: 0.3rem;
+}
+
+.legal ul.plain {
+	list-style: none;
+	padding-left: 0;
+}
+
+.legal a,
+footer a {
+	color: var(--primary);
+	font-weight: 600;
+	text-underline-offset: 2px;
+}
+
+.legal .note {
+	margin-top: 0.8rem;
+	border-radius: 12px;
+	padding: 0.8rem;
+	background: #fbf8ff;
+	border: 1px dashed rgba(92, 26, 134, 0.35);
+	color: #413454;
+}
+
 @media (max-width: 860px) {
 	.top {
 		flex-direction: column;
